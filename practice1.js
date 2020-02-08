@@ -61,6 +61,10 @@ function same2(array1,array2){
 console.log('My expectation answer: '+same([2,2,4,1],[4,1,4,16]))
 console.log('The real answer: '+same2([2,2,4,1],[4,1,4,16]));
 
+// let ex = {a:1,b:2,c:3}  
+// for(let e in ex){
+//     console.log('d' in ex)
+// }
 
 
 
