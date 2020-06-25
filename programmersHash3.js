@@ -31,13 +31,21 @@ pop 장르는 3,100회 재생되었으며, pop 노래는 다음과 같습니다.
 ※ 공지 - 2019년 2월 28일 테스트케이스가 추가되었습니다.
 */
 
-function solution(genres, plays) {
-    var answer = []; 
-    let table = {};
-    let table2 = {};
+// function solution(genres, plays) {
+//     var answer = []; 
+//     let table = {};
+//     let table2 = {};
      
 
-    return answer;
+//     return answer;
+// }
+
+// console.log(solution(['classic', 'pop', 'classic', 'classic', 'pop'],[500, 600, 150, 800, 2500]))
+
+function timeConversion(s) { 
+    let str = '';
+    
 }
 
-console.log(solution(['classic', 'pop', 'classic', 'classic', 'pop'],[500, 600, 150, 800, 2500]))
+timeConversion('04:59:59AM')
+
