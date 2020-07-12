@@ -11,5 +11,23 @@
 
 function solution(w, h) {
     var answer = 1;
-    return answer;
+    let max = Math.max(w,h);
+    let min = Math.min(w,h);
+    let n = 0; 
+
+    //a=max b=min
+
+    while(min != 0){
+        n = max%min;
+        max = min;
+        min = n
+    }
+
+    // gcd = a
+    
+
+    return w*h - (w+h-max);
+
 }
+
+console.log(solution(8,12));
