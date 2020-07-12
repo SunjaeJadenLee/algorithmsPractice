@@ -14,71 +14,48 @@
 
 */
 
-
 function solution(answers) {
     var answer = [];
     let supoja1 = [1,2,3,4,5];
     let supoja2 = [2,1,2,3,2,4,2,5];
     let supoja3 = [3,3,1,1,2,2,4,4,5,5];
-    let answer1 = 0;
-    let answer2 = 0;
-    let answer3 = 0;
-
-    //supoja1 
-    for(let i = 0;i<answers.length;i++){
-        if(i%5 == 0){
-            if(answers[i] == supoja1[5]){
-                answer1++;
-            }
-        } else {
-            if(answers[i] == supoja1[i%5]){
-                answer1++;
-            }
-        }
-        
-    }
+    let ans1 = 0;
+    let ans2 = 0;
+    let ans3 = 0; 
+    let max = 0;
+    let indexes = []
 
     for(let i = 0;i<answers.length;i++){
-        if(i%5 == 0){
-            if(answers[i] == supoja2[5]){
-                answer2++;
-            }
-        } else {
-            if(answers[i] == supoja2[i%5]){
-                answer2++;
-            }
+        if(answers[i] == supoja1[i%5]){
+            ans1++; 
         }
-        
     }
-
     for(let i = 0;i<answers.length;i++){
-        if(i%5 == 0){
-            if(answers[i] == supoja3[5]){
-                answer3++;
-            }
-        } else {
-            if(answers[i] == supoja3[i%5]){
-                answer3++;
-            }
+        if(answers[i] == supoja2[i%8]){
+            ans2++; 
         }
-        
     }
- 
-    let array = [answer1,answer2,answer3];
-    let max = Math.max(...[answer1,answer2,answer3]);
- 
-    array.map((e,i)=>{
-        if(e==max){
-            answer.push(i+1);
+    for(let i = 0;i<answers.length;i++){
+        if(answers[i] == supoja3[i%10]){
+            ans3++; 
         }
-    })
- 
-    return answer.sort((a,b)=>a-b);
+    } 
+    answer = [ans1,ans2,ans3];
+    max  = Math.max(...answer);
+    answer.map((e,i)=>e==max&&indexes.push(i+1)); 
+
+
+    return indexes;
 }
 
-// console.log(solution([1,2,3,4,5]));
-//1
-// console.log(solution([1,3,2,4,2]));
-//1,2,3
+// function test (num){
+//     // return num % 5
+//     return Math.max(...[1,2,3]);
 
-// console.log(solution([3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3]));
+// }
+
+
+console.log(solution([1,2,3,4,5]));
+// console.log(solution([1,3,2,4,2]));
+// console.log(solution([1,2,3,4,5,1,2,3,4,5]))
+// console.log(test(10));
